@@ -40,6 +40,12 @@ a:visited{
     font-size: 20px;
 }
 
+.enemy{
+    color: #ff0000;
+    font-family: 'Lucida Sans';
+    font-size: 20px;
+}
+
 ul, ol, dl {
     font-size: 18px;
     line-height: 1.8;
@@ -130,4 +136,21 @@ dd{
 .img{
     width: 350px;
     height: 200px;
+}
+
+b + i {
+    color: rgb(255, 0, 0);
+}
+
+p b{
+    color: white;
+}
+
+.main a{
+    color: yellow;
+}
+
+div > h3{
+    color: blue;
+    font-style: italic;
 }
