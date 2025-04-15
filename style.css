@@ -15,7 +15,7 @@ h1{
     color: darkblue;
 }
 
-a{
+a:link{
     font-style: italic;
     color: #1d7a25;
 }
@@ -26,6 +26,10 @@ a:hover{
 
 a:visited{
     color: #250230! important;
+}
+
+a:active{
+    color: #ffffff;
 }
 
 .main{
@@ -153,4 +157,29 @@ p b{
 div > h3{
     color: blue;
     font-style: italic;
+}
+
+div{
+    position: static;
+    background-color: pink;
+}
+
+div#floating{
+    float: right;
+}
+
+span{
+    color: #1d7a25;
+}
+
+dt:first-child{
+    color: white;
+}
+
+dt:after{
+    content: "*";
+}
+
+li:before{
+    content: "#";
 }
