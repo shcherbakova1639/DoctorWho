@@ -56,5 +56,21 @@
 				<td>Далеки</td>
 			</tr>
 		</table>
+		<script>
+			document.body.style.background = 'blue'; 
+			setTimeout(() => document.body.style.background = '', 30000);
+
+			let en = document.getElementById("enemytable");
+			let allEnemies = document.querySelectorAll("dt");
+  			allEnemies.forEach((en, i) => {
+			alert(`Ворог ${i + 1}: ${en.textContent}`);}
+			);
+			let enemy = document.getElementById("enemy");
+			enemy.innerHTML = 'Інопланетяни вороги';
+			alert(enemy.outerHTML)
+			let dt = document.querySelector("dt");
+			let textNode = dt.firstChild; 
+			alert(textNode.data);
+		</script>
 	</body>
 </html>

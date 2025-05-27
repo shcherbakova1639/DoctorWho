@@ -18,7 +18,7 @@
 		Однак Доктор отримав від інших Володарів Часу новий запас регенерацій, після того як вичерпав перший.</p>
 		<a href="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/15ED2/production/_131601898_photo02-11-2023171229.jpg" target="_blank"> 
 		<img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/15ED2/production/_131601898_photo02-11-2023171229.jpg" width=50% height=50% alt="Усі регенерації доктора на данний момент"> </a>
-		<div>
+		<div id="doctors">
 			<h3>Актори, які грали Доктора</h3>
 			<ol>
 				<li>Вільям Гартнелл (1963–1966)</li>
@@ -49,5 +49,12 @@
 
 		<br><a href="https://cdn.europosters.eu/image/750/%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B8/doctor-who-tardis-i15894.jpg" target="_blank" name="new"> 
 		<img src="https://cdn.europosters.eu/image/750/%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B8/doctor-who-tardis-i15894.jpg" width="800" height="1200" alt="Тардіс"> </a>
+		<script>
+			let doc = prompt('Який доктор ваш улюблений?', '');
+			alert(`Ваш улюблений доктор ${doc}`);
+			let sure = confirm('Точно?');
+			alert(sure);
+			alert(doctors.textContent)
+		</script>
 	</body>
 </html>
