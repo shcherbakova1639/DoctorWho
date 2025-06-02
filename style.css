@@ -188,3 +188,25 @@ li:before{
   background-color: #ebd364;
   color: rgb(33, 14, 14);
 }
+
+#dragArea {
+      margin-top: 30px;
+      width: 100%;
+      height: 300px;
+      border: 2px dashed #aaa;
+      position: relative;
+}
+
+#tardis {
+      width: 100px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: grab;
+      transition: transform 0.2s;
+}
+
+.highlight-row {
+  background-color: #957ef3;
+  transition: background-color;
+}

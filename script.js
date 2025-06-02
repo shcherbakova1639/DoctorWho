@@ -76,7 +76,7 @@ ul.after(newListNote);
 let lastLi = ul.querySelector("li:last-of-type");
 lastLi.remove();*/
 
-
+/*
     //Атрибут onclick
     function changeColor() {
       document.body.style.backgroundColor = "#1d1d2b";
@@ -144,4 +144,60 @@ lastLi.remove();*/
       if (action && tardisActions[action]) {
         tardisActions[action]();
       }
-    };
+    };*/
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+  let table = document.getElementById("companytable");
+
+  table.addEventListener("mouseover", function (event) {
+    let row = event.target.closest("tr");
+    if (row && table.contains(row)) {
+      row.classList.add("highlight-row");
+    }
+  });
+
+  table.addEventListener("mouseout", function (event) {
+    let row = event.target.closest("tr");
+    let relatedRow = event.relatedTarget ? event.relatedTarget.closest("tr") : null;
+    if (row && row !== relatedRow) {
+      row.classList.remove("highlight-row");
+    }
+  });
+});
+
+ //Перетягування зображення 
+let tardis = document.getElementById("tardis");
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+tardis.addEventListener("mousedown", function(event) {
+  isDragging = true;
+  offsetX = event.offsetX;
+  offsetY = event.offsetY;
+  tardis.style.cursor = "grabbing";
+});
+
+document.addEventListener("mousemove", function(event) {
+  if (isDragging) {
+    let dragAreaRect = document.getElementById("dragArea").getBoundingClientRect();
+    let x = event.clientX - dragAreaRect.left - offsetX;
+    let y = event.clientY - dragAreaRect.top - offsetY;
+
+    x = Math.max(0, Math.min(x, dragAreaRect.width - tardis.offsetWidth));
+    y = Math.max(0, Math.min(y, dragAreaRect.height - tardis.offsetHeight));
+
+    tardis.style.left = `${x}px`;
+    tardis.style.top = `${y}px`;
+  }
+});
+
+document.addEventListener("mouseup", function() {
+  if (isDragging) {
+    isDragging = false;
+    tardis.style.cursor = "grab";
+  }
+});
+
+
