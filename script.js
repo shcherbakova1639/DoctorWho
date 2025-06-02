@@ -4,7 +4,7 @@
     alert(`Ваш улюблений доктор ${quest}`)
     }
     else{
-   const doctors = [
+   let doctors = [
         "1-й Доктор — Вільям Гартнелл",
         "2-й Доктор — Патрік Траутон",
         "3-й Доктор — Джон Пертуї",
@@ -20,7 +20,7 @@
         "13-й Доктор — Джоді Віттакер"
     ];
 
-    let result = "Інкарнації Доктора Хто:\n\n";
+    let result = "Реінкарнації Доктора Хто:\n\n";
 
     for (let i = 0; i < doctors.length; i++) {
         result += `${doctors[i]}\n`;
@@ -53,7 +53,7 @@ compare("Далек", "Кіберлюдина");
 if (confirm("Перейти на Wiki?")) {
 
  location.href = "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BA%D1%82%D0%BE%D1%80_%D0%A5%D1%82%D0%BE";
-}*/
+}
 
 document.write("<h2>bad wolf</h2>");
 
@@ -74,4 +74,74 @@ newListNote.innerHTML = "Гигикання";
 ul.after(newListNote);
 
 let lastLi = ul.querySelector("li:last-of-type");
-lastLi.remove();
+lastLi.remove();*/
+
+
+    //Атрибут onclick
+    function changeColor() {
+      document.body.style.backgroundColor = "#1d1d2b";
+    }
+
+    //Властивість .onclick
+    document.getElementById("btn").onclick = function () {
+      alert("Біллі Пайпер - новий доктор?");
+    };
+
+    //addEventListener з кількома обробниками
+    let button = document.getElementById("button");
+
+    function tenthDoctor() {
+      alert("Десятий Доктор: Allons-y!");
+    }
+
+    function eleventhDoctor() {
+      alert("Одинадцятий Доктор: Geronimo!");
+    }
+
+    button.addEventListener("click", tenthDoctor);
+    button.addEventListener("click", eleventhDoctor);
+
+    //Об'єкт як обробник (handleEvent)
+    let cybermanBtn = document.getElementById("cybermanBtn");
+
+    let cybermanHandler = {
+      handleEvent(event) {
+        alert("Кібермен атакує! Ви натиснули: " + event.currentTarget.tagName);
+        alert("Обробник видаляється.");
+        event.currentTarget.removeEventListener("click", cybermanHandler);
+      }
+    };
+
+    cybermanBtn.addEventListener("click", cybermanHandler);
+
+    // Підсвічування елементів списку (event.target) 
+    let list = document.getElementById("dtWho");
+
+    list.onclick = function (event) {
+      if (event.target.tagName === "LI") {
+        [...list.children].forEach(li => li.classList.remove("highlight"));
+        event.target.classList.add("highlight");
+      }
+    };
+
+    // Меню з поведінкою через data-action
+    let tardisMenu = document.getElementById("tardisMenu");
+
+    let tardisActions = behaviors = {
+      travel() {
+        alert("ТАРДІС мандрує в далеке майбутнє!");
+      },
+      scan() {
+        alert("Сканування завершено: поблизу далеків не виявлено.");
+      },
+      cloak() {
+        alert("Режим невидимості активовано.");
+      }
+    };
+
+    tardisMenu.onclick = function (event) {
+      let action = event.target.dataset.action;
+      if (action && tardisActions[action]) {
+        tardisActions[action]();
+      }
+    };

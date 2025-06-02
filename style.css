@@ -183,3 +183,8 @@ dt:after{
 li:before{
     content: "#";
 }
+
+.highlight {
+  background-color: #ebd364;
+  color: rgb(33, 14, 14);
+}
